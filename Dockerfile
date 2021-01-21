@@ -2,7 +2,7 @@ FROM golang:latest AS build
 
 WORKDIR /src/
 
-COPY main.go go.* /src/
+COPY main.go /src/
 
 RUN CGO_ENABLED=0 go build -o /bin/demo
 
