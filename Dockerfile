@@ -2,10 +2,10 @@ FROM golang:latest AS build
 
 WORKDIR /src/
 
-COPY main.go /src/
+COPY main.go go.* /src/
 
-RUN CGO_ENABLED=0 go build -o /bin/demo
+RUN CGO_ENABLED=0 go build -o /bin/hellofromgo
 
 FROM scratch
-COPY --from=build /bin/demo /bin/demo
-ENTRYPOINT ["/bin/demo"]
+COPY --from=build /bin/hellofromgo /bin/hellofromgo
+ENTRYPOINT ["/bin/hellofromgo"]
