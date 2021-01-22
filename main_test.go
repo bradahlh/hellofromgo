@@ -15,7 +15,7 @@ func Router() *mux.Router {
 	return router
 }
 
-func TestRootEndpoint(t *testing.T) {
+func TestAddHandler(t *testing.T) {
 	request, _ := http.NewRequest("GET", "/add/2/3", nil)
 	response := httptest.NewRecorder()
 	Router().ServeHTTP(response, request)
