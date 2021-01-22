@@ -20,5 +20,5 @@ func TestAddHandler(t *testing.T) {
 	response := httptest.NewRecorder()
 	Router().ServeHTTP(response, request)
 	assert.Equal(t, 200, response.Code, "OK response is expected")
-	assert.Equal(t, "6", response.Body.String(), "Expect response '5'")
+	assert.Equal(t, "5", response.Body.String(), "Expect response '5'")
 }
